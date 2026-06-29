@@ -92,7 +92,7 @@ function ManageAchievements() {
         {data.map(item => (
           <div key={item._id} className="bg-white p-4 shadow rounded">
 
-            <img src={item.img} className="h-40 w-full object-cover mb-3" />
+            <img src={item.img}  alt={item.title} className="h-40 w-full object-cover mb-3" />
 
             <h3 className="font-bold">{item.title}</h3>
             <p>{item.category} • {item.year}</p>

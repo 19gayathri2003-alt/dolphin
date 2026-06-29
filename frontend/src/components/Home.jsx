@@ -27,12 +27,12 @@ const [notes, setNotes] = useState([]);
 const [mapUrl, setMapUrl] = useState("");
   // AUTO SLIDER
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 3000);
+  const interval = setInterval(() => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  }, 3000);
 
-    return () => clearInterval(interval);
-  }, [current]);
+  return () => clearInterval(interval);
+}, [images.length]);
   // ✅ LEADER FETCH useEffect (SEPARATE)
 useEffect(() => {
   fetch("http://localhost:5000/leaders")
