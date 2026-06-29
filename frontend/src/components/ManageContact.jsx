@@ -4,13 +4,13 @@ function ManageContact() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/contact")
+    fetch("https://dolphin-982t.onrender.com/contact")
       .then(res => res.json())
       .then(data => setData(data));
   }, []);
 
   const deleteMsg = async (id) => {
-    await fetch(`http://localhost:5000/contact/${id}`, {
+    await fetch(`https://dolphin-982t.onrender.com/contact/${id}`, {
       method: "DELETE"
     });
 

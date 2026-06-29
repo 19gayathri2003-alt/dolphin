@@ -12,7 +12,7 @@ function Achievements() {
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/achievements")
+    axios.get("https://dolphin-982t.onrender.com/achievements")
       .then(res => setAchievements(res.data))
       .catch(err => console.log(err));
   }, []);

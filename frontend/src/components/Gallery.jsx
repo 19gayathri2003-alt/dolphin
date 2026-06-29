@@ -10,7 +10,7 @@ function Gallery() {
 
   // 🔥 FETCH DATA FROM BACKEND
   useEffect(() => {
-    fetch("http://localhost:5000/gallery")
+    fetch("https://dolphin-982t.onrender.com/gallery")
       .then(res => res.json())
       .then(data => setImages(data))
       .catch(err => console.log("Fetch error:", err));

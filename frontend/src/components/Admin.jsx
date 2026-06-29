@@ -42,10 +42,10 @@ function Admin() {
   const fetchData = async () => {
     try {
       const [g, e, n, a] = await Promise.all([
-        axios.get("http://localhost:5000/gallery"),
-        axios.get("http://localhost:5000/events"),
-        axios.get("http://localhost:5000/notes"),
-        axios.get("http://localhost:5000/achievements"),
+        axios.get("https://dolphin-982t.onrender.com/gallery"),
+        axios.get("https://dolphin-982t.onrender.com/events"),
+        axios.get("https://dolphin-982t.onrender.com/notes"),
+        axios.get("https://dolphin-982t.onrender.com/achievements"),
       ]);
 
       setStats({

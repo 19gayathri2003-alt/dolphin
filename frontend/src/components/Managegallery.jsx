@@ -8,7 +8,7 @@ function Managegallery() {
   const [gallery, setGallery] = useState([]);
 
   const fetchData = () => {
-    fetch("http://localhost:5000/gallery")
+    fetch("https://dolphin-982t.onrender.com/gallery")
       .then(res => res.json())
       .then(data => setGallery(data));
   };
@@ -25,7 +25,7 @@ function Managegallery() {
     formData.append("category", category);
     formData.append("label", label);
 
-    await fetch("http://localhost:5000/gallery", {
+    await fetch("https://dolphin-982t.onrender.com/gallery", {
       method: "POST",
       body: formData,
     });
@@ -38,7 +38,7 @@ function Managegallery() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/gallery/${id}`, {
+    await fetch(`https://dolphin-982t.onrender.com/gallery/${id}`, {
       method: "DELETE",
     });
 

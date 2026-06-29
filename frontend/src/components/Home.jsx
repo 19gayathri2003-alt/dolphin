@@ -35,19 +35,19 @@ const [mapUrl, setMapUrl] = useState("");
 }, [images.length]);
   // ✅ LEADER FETCH useEffect (SEPARATE)
 useEffect(() => {
-  fetch("http://localhost:5000/leaders")
+  fetch("https://dolphin-982t.onrender.com/leaders")
     .then(res => res.json())
     .then(data => setLeaders(data));
 }, []);
 
 useEffect(() => {
-  fetch("http://localhost:5000/notes")
+  fetch("https://dolphin-982t.onrender.com/notes")
     .then(res => res.json())
     .then(data => setNotes(data));
 }, []);
 
 useEffect(() => {
-  fetch("http://localhost:5000/map")
+  fetch("https://dolphin-982t.onrender.com/map")
     .then(res => res.json())
     .then(data => {
       if (data) setMapUrl(data.mapUrl);

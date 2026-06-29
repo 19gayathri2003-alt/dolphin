@@ -10,7 +10,7 @@ function ManageEvents() {
   });
 
   const loadEvents = () => {
-    fetch("http://localhost:5000/events")
+    fetch("https://dolphin-982t.onrender.com/events")
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.log(err));
@@ -27,7 +27,7 @@ function ManageEvents() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/events", {
+    await fetch("https://dolphin-982t.onrender.com/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ function ManageEvents() {
   };
 
   const deleteEvent = async (id) => {
-    await fetch(`http://localhost:5000/events/${id}`, {
+    await fetch(`https://dolphin-982t.onrender.com/events/${id}`, {
       method: "DELETE"
     });
 

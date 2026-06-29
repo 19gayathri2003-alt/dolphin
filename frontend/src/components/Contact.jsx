@@ -7,7 +7,7 @@ function Contact() {
 const [mapUrl, setMapUrl] = useState("");
 const [showMsg, setShowMsg] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/map")
+    fetch("https://dolphin-982t.onrender.com/map")
       .then(res => res.json())
       .then(data => {
         if (data) setMapUrl(data.mapUrl);
@@ -32,7 +32,7 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const res = await fetch("http://localhost:5000/contact", {
+  const res = await fetch("https://dolphin-982t.onrender.com/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(form)

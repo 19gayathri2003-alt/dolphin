@@ -14,7 +14,7 @@ function ManageAchievements() {
 
   // FETCH
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/achievements");
+    const res = await axios.get("https://dolphin-982t.onrender.com/achievements");
     setData(res.data);
   };
 
@@ -33,14 +33,14 @@ function ManageAchievements() {
     formData.append("desc", form.desc);
     formData.append("image", form.image);
 
-    await axios.post("http://localhost:5000/achievements", formData);
+    await axios.post("https://dolphin-982t.onrender.com/achievements", formData);
 
     fetchData();
   };
 
   // DELETE
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/achievements/${id}`);
+    await axios.delete(`https://dolphin-982t.onrender.com/achievements/${id}`);
     fetchData();
   };
 

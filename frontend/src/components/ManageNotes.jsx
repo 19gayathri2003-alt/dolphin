@@ -8,7 +8,7 @@ const ManageNotes = () => {
   const [notes, setNotes] = useState([]);
 
   const fetchData = () => {
-    fetch("http://localhost:5000/notes")
+    fetch("https://dolphin-982t.onrender.com/notes")
       .then(res => res.json())
       .then(data => setNotes(data));
   };
@@ -20,7 +20,7 @@ const ManageNotes = () => {
   const handleAdd = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/notes", {
+    await fetch("https://dolphin-982t.onrender.com/notes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const ManageNotes = () => {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/notes/${id}`, {
+    await fetch(`https://dolphin-982t.onrender.com/notes/${id}`, {
       method: "DELETE",
     });
 
