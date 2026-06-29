@@ -102,7 +102,7 @@ app.post("/gallery", upload.single("image"), async (req, res) => {
     const newItem = new Gallery({
       category: req.body.category,
       label: req.body.label,
-      img: "http://localhost:5000/uploads/" + req.file.filename,
+      img: req.protocol + "://" + req.get("host") + "/uploads/" + req.file.filename,
     });
 
     await newItem.save();
@@ -138,7 +138,7 @@ app.post("/leaders", upload.single("image"), async (req, res) => {
       name: req.body.name,
       role: req.body.role,
       desc: req.body.desc,
-      img: "http://localhost:5000/uploads/" + req.file.filename,
+      img: req.protocol + "://" + req.get("host") + "/uploads/" + req.file.filename,
     });
 
     await newLeader.save();
@@ -338,7 +338,7 @@ app.post("/achievements", upload.single("image"), async (req, res) => {
       year: req.body.year,
       title: req.body.title,
       desc: req.body.desc,
-      img: "http://localhost:5000/uploads/" + req.file.filename,
+      img: req.protocol + "://" + req.get("host") + "/uploads/" + req.file.filename,
     });
 
     await newItem.save();
@@ -360,6 +360,8 @@ app.delete("/achievements/:id", async (req, res) => {
 /* ================== SERVER ================== */
 
 
-app.listen(5000, () => {
-  console.log("🚀 Server running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
